@@ -157,6 +157,8 @@
       margin-bottom: 3rem;
       border-bottom: 1px solid var(--border);
       padding-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
     }
 
     .section-title {
@@ -181,6 +183,7 @@
       text-transform: uppercase;
       cursor: pointer;
       padding-bottom: 0.25rem;
+      white-space: nowrap;
       transition: all 0.3s ease;
     }
 
@@ -245,6 +248,7 @@
       letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--text-dim);
+      background: linear-gradient(135deg, #0c0d10 0%, #040405 100%);
     }
 
     .card-content {
@@ -480,13 +484,14 @@
       <div class="filters">
         <button class="filter-btn active" onclick="filterWorks(event, 'all')">All</button>
         <button class="filter-btn" onclick="filterWorks(event, 'directing')">Directing</button>
-        <button class="filter-btn" onclick="filterWorks(event, 'editorial')">Feature & OTT Editing</button>
-        <button class="filter-btn" onclick="filterWorks(event, 'commercials')">Commercials</button>
+        <button class="filter-btn" onclick="filterWorks(event, 'editorial')">Feature & OTT</button>
+        <button class="filter-btn" onclick="filterWorks(event, 'commercials')">Commercials & Ads</button>
+        <button class="filter-btn" onclick="filterWorks(event, 'digital')">Digital</button>
       </div>
     </div>
 
     <div class="work-grid">
-      <!-- Macho -->
+      <!-- 1. Macho -->
       <div class="work-card" data-category="directing" onclick="playMedia('https://www.youtube-nocookie.com/embed/kiEg4vUQw8E?autoplay=1')">
         <div class="thumbnail-wrapper">
           <img src="https://img.youtube.com/vi/kiEg4vUQw8E/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/kiEg4vUQw8E/hqdefault.jpg'" alt="Macho">
@@ -501,8 +506,8 @@
         </div>
       </div>
 
-      <!-- Sudh Sakharambh -->
-      <div class="work-card" data-category="editorial" onclick="playMedia('https://www.youtube-nocookie.com/embed/kiEg4vUQw8E?autoplay=1')">
+      <!-- 2. Sudh Sakharambh -->
+      <div class="work-card" data-category="editorial" onclick="playMedia('https://drive.google.com/file/d/1uGPtzy7jX__TdUhFRjnrkX-KCFI1-e7U/preview')">
         <div class="thumbnail-wrapper">
           <div class="empty-thumb">Theatrical Film Edit</div>
         </div>
@@ -512,11 +517,11 @@
             <span>Theatrical Feature</span>
           </div>
           <h3 class="card-title">Sudh Sakharambh</h3>
-          <p class="card-desc">Feature-length film edit balancing multi-character arcs, rhythm, and sound integration.</p>
+          <p class="card-desc">Full feature-length film edit balancing multi-character arcs, story rhythm, and final master assembly.</p>
         </div>
       </div>
 
-      <!-- Matka King -->
+      <!-- 3. Matka King -->
       <div class="work-card" data-category="editorial" onclick="playMedia('https://www.youtube-nocookie.com/embed/9T1oy0y8-zY?autoplay=1')">
         <div class="thumbnail-wrapper">
           <img src="https://img.youtube.com/vi/9T1oy0y8-zY/hqdefault.jpg" alt="Matka King">
@@ -531,7 +536,7 @@
         </div>
       </div>
 
-      <!-- Ghar Banduk Biryani -->
+      <!-- 4. Ghar Banduk Biryani -->
       <div class="work-card" data-category="editorial" onclick="playMedia('https://www.youtube-nocookie.com/embed/_GEf5U9i6-w?autoplay=1')">
         <div class="thumbnail-wrapper">
           <img src="https://img.youtube.com/vi/_GEf5U9i6-w/hqdefault.jpg" alt="Ghar Banduk Biryani">
@@ -546,7 +551,7 @@
         </div>
       </div>
 
-      <!-- Prey -->
+      <!-- 5. Prey -->
       <div class="work-card" data-category="directing" onclick="playMedia('https://www.youtube-nocookie.com/embed/I2HgXMA2DrU?autoplay=1')">
         <div class="thumbnail-wrapper">
           <img src="https://img.youtube.com/vi/I2HgXMA2DrU/hqdefault.jpg" alt="Prey">
@@ -561,7 +566,7 @@
         </div>
       </div>
 
-      <!-- Employment -->
+      <!-- 6. Employment -->
       <div class="work-card" data-category="directing" onclick="playMedia('https://www.youtube-nocookie.com/embed/o6RJs1oDrAk?autoplay=1')">
         <div class="thumbnail-wrapper">
           <img src="https://img.youtube.com/vi/o6RJs1oDrAk/hqdefault.jpg" alt="Employment">
@@ -576,7 +581,7 @@
         </div>
       </div>
 
-      <!-- Amenorrhea -->
+      <!-- 7. Amenorrhea -->
       <div class="work-card" data-category="editorial" onclick="playMedia('https://www.youtube-nocookie.com/embed/9krmH4RnvjA?autoplay=1')">
         <div class="thumbnail-wrapper">
           <img src="https://img.youtube.com/vi/9krmH4RnvjA/hqdefault.jpg" alt="Amenorrhea">
@@ -591,7 +596,67 @@
         </div>
       </div>
 
-      <!-- Brand Bada Karo -->
+      <!-- 8. Feature Trailer Cut -->
+      <div class="work-card" data-category="editorial" onclick="playMedia('https://www.youtube-nocookie.com/embed/dqY4ovLaFnk?autoplay=1')">
+        <div class="thumbnail-wrapper">
+          <img src="https://img.youtube.com/vi/dqY4ovLaFnk/hqdefault.jpg" alt="Trailer Edit">
+        </div>
+        <div class="card-content">
+          <div class="card-meta">
+            <span>Trailer Editor</span>
+            <span>Theatrical Promo</span>
+          </div>
+          <h3 class="card-title">Theatrical Film Promo</h3>
+          <p class="card-desc">Rhythmic, high-impact trailer edit combining dramatic peaks, dialogue hooks, and musical beats.</p>
+        </div>
+      </div>
+
+      <!-- 9. Raj Masala TVC (Drive Video) -->
+      <div class="work-card" data-category="commercials" onclick="playMedia('https://drive.google.com/file/d/1IPNOhgnj2VwW7rVNKIsBiZ-s1AiL5DFE/preview')">
+        <div class="thumbnail-wrapper">
+          <div class="empty-thumb">Raj Masala Commercial</div>
+        </div>
+        <div class="card-content">
+          <div class="card-meta">
+            <span>Editor</span>
+            <span>Commercial TVC</span>
+          </div>
+          <h3 class="card-title">Raj Masala Campaign</h3>
+          <p class="card-desc">Dynamic food advertisement edit highlighting rich color treatment, pace, and sound sync.</p>
+        </div>
+      </div>
+
+      <!-- 10. Makhana Wale Ad 01 (Drive Video) -->
+      <div class="work-card" data-category="commercials" onclick="playMedia('https://drive.google.com/file/d/1_M5GtyS-YzFw3Il31KgGgd-PGDlzqEOY/preview')">
+        <div class="thumbnail-wrapper">
+          <div class="empty-thumb">Makhana Wale 01</div>
+        </div>
+        <div class="card-content">
+          <div class="card-meta">
+            <span>Editor</span>
+            <span>FMCG Commercial</span>
+          </div>
+          <h3 class="card-title">Makhana Wale Ad 01</h3>
+          <p class="card-desc">Crisp snack brand campaign crafted for broadcast television and high-conversion social delivery.</p>
+        </div>
+      </div>
+
+      <!-- 11. Makhana Wale Ad 02 (Drive Video) -->
+      <div class="work-card" data-category="commercials" onclick="playMedia('https://drive.google.com/file/d/1PGyj3y0_YqYMTHAH6E9QulzAMW2wPCvT/preview')">
+        <div class="thumbnail-wrapper">
+          <div class="empty-thumb">Makhana Wale 02</div>
+        </div>
+        <div class="card-content">
+          <div class="card-meta">
+            <span>Editor</span>
+            <span>FMCG Commercial</span>
+          </div>
+          <h3 class="card-title">Makhana Wale Ad 02</h3>
+          <p class="card-desc">Second commercial campaign variation focused on fast-paced product appeal and sound design.</p>
+        </div>
+      </div>
+
+      <!-- 12. Brand Bada Karo -->
       <div class="work-card" data-category="commercials" onclick="playMedia('https://www.youtube-nocookie.com/embed/0pEJL-O1SHQ?autoplay=1')">
         <div class="thumbnail-wrapper">
           <img src="https://img.youtube.com/vi/0pEJL-O1SHQ/hqdefault.jpg" alt="Brand Bada Karo">
@@ -603,6 +668,51 @@
           </div>
           <h3 class="card-title">Brand Bada Karo</h3>
           <p class="card-desc">High-tempo brand commercial optimized for clear retention and kinetic pacing.</p>
+        </div>
+      </div>
+
+      <!-- 13. Sanjay Ghodawat Academy -->
+      <div class="work-card" data-category="commercials" onclick="playMedia('https://www.youtube-nocookie.com/embed/i0k1usODKGY?autoplay=1')">
+        <div class="thumbnail-wrapper">
+          <img src="https://img.youtube.com/vi/i0k1usODKGY/hqdefault.jpg" alt="Sanjay Ghodawat Academy">
+        </div>
+        <div class="card-content">
+          <div class="card-meta">
+            <span>Editor</span>
+            <span>Brand Film</span>
+          </div>
+          <h3 class="card-title">Sanjay Ghodawat Academy</h3>
+          <p class="card-desc">Institutional brand film highlighting campus infrastructure, faculty, and student excellence.</p>
+        </div>
+      </div>
+
+      <!-- 14. YouTube Digital 01 -->
+      <div class="work-card" data-category="digital" onclick="playMedia('https://www.youtube-nocookie.com/embed/y_Y7JmiZJac?autoplay=1')">
+        <div class="thumbnail-wrapper">
+          <img src="https://img.youtube.com/vi/y_Y7JmiZJac/hqdefault.jpg" alt="Digital Feature 01">
+        </div>
+        <div class="card-content">
+          <div class="card-meta">
+            <span>Editor</span>
+            <span>Digital Series</span>
+          </div>
+          <h3 class="card-title">Digital Production 01</h3>
+          <p class="card-desc">Modern online video edit combining narrative pacing, transitions, and viewer retention.</p>
+        </div>
+      </div>
+
+      <!-- 15. YouTube Digital 02 -->
+      <div class="work-card" data-category="digital" onclick="playMedia('https://www.youtube-nocookie.com/embed/XUXn5NBpxho?autoplay=1')">
+        <div class="thumbnail-wrapper">
+          <img src="https://img.youtube.com/vi/XUXn5NBpxho/hqdefault.jpg" alt="Digital Feature 02">
+        </div>
+        <div class="card-content">
+          <div class="card-meta">
+            <span>Editor</span>
+            <span>Digital Series</span>
+          </div>
+          <h3 class="card-title">Digital Production 02</h3>
+          <p class="card-desc">Engaging digital video storytelling structured with audio balancing and seamless visual flow.</p>
         </div>
       </div>
     </div>
