@@ -22,11 +22,7 @@
       --font-sans: 'Plus Jakarta Sans', sans-serif;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       background-color: var(--bg);
@@ -74,9 +70,7 @@
       transition: color 0.3s ease;
     }
 
-    .nav-links a:hover {
-      color: var(--text);
-    }
+    .nav-links a:hover { color: var(--text); }
 
     .hero {
       min-height: 85vh;
@@ -120,12 +114,6 @@
       font-weight: 300;
       max-width: 600px;
       line-height: 1.8;
-    }
-
-    .experience-badge {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
     }
 
     .experience-badge h3 {
@@ -423,9 +411,7 @@
       cursor: pointer;
     }
 
-    .modal-close:hover {
-      color: var(--text);
-    }
+    .modal-close:hover { color: var(--text); }
 
     footer {
       border-top: 1px solid var(--border);
@@ -438,17 +424,9 @@
     }
 
     @media (max-width: 900px) {
-      .hero-grid, .about-wrap, .work-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      nav, .hero, section, .contact-block, footer {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-      }
-      .nav-links {
-        display: none;
-      }
+      .hero-grid, .about-wrap, .work-grid { grid-template-columns: 1fr; gap: 2rem; }
+      nav, .hero, section, .contact-block, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .nav-links { display: none; }
     }
   </style>
 </head>
@@ -491,29 +469,29 @@
     </div>
 
     <div class="work-grid">
-      <!-- 1. Macho -->
+      <!-- Macho -->
       <div class="work-card" data-category="directing" onclick="playMedia('https://www.youtube-nocookie.com/embed/kiEg4vUQw8E?autoplay=1')">
         <div class="thumbnail-wrapper">
           <img src="https://img.youtube.com/vi/kiEg4vUQw8E/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/kiEg4vUQw8E/hqdefault.jpg'" alt="Macho">
         </div>
         <div class="card-content">
           <div class="card-meta">
-            <span>Writer &bull; Director &bull; Editor</span>
-            <span>Feature Film</span>
+            <span>Writer &bull; Director &bull; Editor[cite: 1]</span>
+            <span>Feature Film[cite: 1]</span>
           </div>
           <h3 class="card-title">Macho</h3>
-          <p class="card-desc">Debut feature film produced by Nagraj Manjule. Starring Swapnil Joshi, Om Bhutkar, Vidhula Chougule, and Alok Rajwade.</p>
+          <p class="card-desc">Debut feature film produced by Nagraj Manjule[cite: 1]. Starring Swapnil Joshi, Om Bhutkar, Vidhula Chougule, and Alok Rajwade[cite: 1].</p>
         </div>
       </div>
 
-      <!-- 2. Sudh Sakharambh -->
+      <!-- Sudh Sakharambh -->
       <div class="work-card" data-category="editorial" onclick="playMedia('https://drive.google.com/file/d/1uGPtzy7jX__TdUhFRjnrkX-KCFI1-e7U/preview')">
         <div class="thumbnail-wrapper">
           <div class="empty-thumb">Theatrical Film Edit</div>
         </div>
         <div class="card-content">
           <div class="card-meta">
-            <span>Lead Film Editor</span>
+            <span>Lead Film Editor[cite: 1]</span>
             <span>Theatrical Feature</span>
           </div>
           <h3 class="card-title">Sudh Sakharambh</h3>
@@ -521,74 +499,74 @@
         </div>
       </div>
 
-      <!-- 3. Matka King -->
+      <!-- Matka King -->
       <div class="work-card" data-category="editorial" onclick="playMedia('https://www.youtube-nocookie.com/embed/9T1oy0y8-zY?autoplay=1')">
         <div class="thumbnail-wrapper">
           <img src="https://img.youtube.com/vi/9T1oy0y8-zY/hqdefault.jpg" alt="Matka King">
         </div>
         <div class="card-content">
           <div class="card-meta">
-            <span>Assistant & Online Editor</span>
-            <span>Amazon Prime Video</span>
+            <span>Assistant & Online Editor[cite: 1]</span>
+            <span>Amazon Prime Video[cite: 1]</span>
           </div>
           <h3 class="card-title">Matka King</h3>
           <p class="card-desc">1960s period crime drama series created with Nagraj Popatrao Manjule and starring Vijay Varma.</p>
         </div>
       </div>
 
-      <!-- 4. Ghar Banduk Biryani -->
+      <!-- Ghar Banduk Biryani -->
       <div class="work-card" data-category="editorial" onclick="playMedia('https://www.youtube-nocookie.com/embed/_GEf5U9i6-w?autoplay=1')">
         <div class="thumbnail-wrapper">
           <img src="https://img.youtube.com/vi/_GEf5U9i6-w/hqdefault.jpg" alt="Ghar Banduk Biryani">
         </div>
         <div class="card-content">
           <div class="card-meta">
-            <span>Assistant Editor</span>
+            <span>Assistant Editor[cite: 1]</span>
             <span>Zee Studios</span>
           </div>
           <h3 class="card-title">Ghar Banduk Biryani</h3>
-          <p class="card-desc">Aatpat Productions theatrical release. Multi-track cutting, sound design, and VFX assembly.</p>
+          <p class="card-desc">Aatpat Productions theatrical release[cite: 1]. Multi-track cutting, sound design, and VFX assembly[cite: 1].</p>
         </div>
       </div>
 
-      <!-- 5. Prey -->
+      <!-- Prey -->
       <div class="work-card" data-category="directing" onclick="playMedia('https://www.youtube-nocookie.com/embed/I2HgXMA2DrU?autoplay=1')">
         <div class="thumbnail-wrapper">
           <img src="https://img.youtube.com/vi/I2HgXMA2DrU/hqdefault.jpg" alt="Prey">
         </div>
         <div class="card-content">
           <div class="card-meta">
-            <span>Writer &bull; Director &bull; Editor</span>
-            <span>Short Film</span>
+            <span>Writer &bull; Director &bull; Editor[cite: 1]</span>
+            <span>Short Film[cite: 1]</span>
           </div>
           <h3 class="card-title">Prey</h3>
           <p class="card-desc">Psychological narrative film exploring tension, pacing, and visual storytelling.</p>
         </div>
       </div>
 
-      <!-- 6. Employment -->
+      <!-- Employment -->
       <div class="work-card" data-category="directing" onclick="playMedia('https://www.youtube-nocookie.com/embed/o6RJs1oDrAk?autoplay=1')">
         <div class="thumbnail-wrapper">
           <img src="https://img.youtube.com/vi/o6RJs1oDrAk/hqdefault.jpg" alt="Employment">
         </div>
         <div class="card-content">
           <div class="card-meta">
-            <span>Writer &bull; Director &bull; Editor</span>
-            <span>Short Film</span>
+            <span>Writer &bull; Director &bull; Editor[cite: 1]</span>
+            <span>Short Film[cite: 1]</span>
           </div>
           <h3 class="card-title">Employment</h3>
           <p class="card-desc">Social realist short film focusing on character nuance and naturalistic staging.</p>
         </div>
       </div>
 
-      <!-- 7. Amenorrhea -->
+      <!-- Amenorrhea -->
       <div class="work-card" data-category="editorial" onclick="playMedia('https://www.youtube-nocookie.com/embed/9krmH4RnvjA?autoplay=1')">
         <div class="thumbnail-wrapper">
           <img src="https://img.youtube.com/vi/9krmH4RnvjA/hqdefault.jpg" alt="Amenorrhea">
         </div>
         <div class="card-content">
           <div class="card-meta">
-            <span>Film Editor</span>
+            <span>Film Editor[cite: 1]</span>
             <span>Short Film</span>
           </div>
           <h3 class="card-title">Amenorrhea</h3>
@@ -596,7 +574,7 @@
         </div>
       </div>
 
-      <!-- 8. Feature Trailer Cut -->
+      <!-- Trailer Cut -->
       <div class="work-card" data-category="editorial" onclick="playMedia('https://www.youtube-nocookie.com/embed/dqY4ovLaFnk?autoplay=1')">
         <div class="thumbnail-wrapper">
           <img src="https://img.youtube.com/vi/dqY4ovLaFnk/hqdefault.jpg" alt="Trailer Edit">
@@ -611,7 +589,7 @@
         </div>
       </div>
 
-      <!-- 9. Raj Masala TVC (Drive Video) -->
+      <!-- Raj Masala TVC -->
       <div class="work-card" data-category="commercials" onclick="playMedia('https://drive.google.com/file/d/1IPNOhgnj2VwW7rVNKIsBiZ-s1AiL5DFE/preview')">
         <div class="thumbnail-wrapper">
           <div class="empty-thumb">Raj Masala Commercial</div>
@@ -626,7 +604,7 @@
         </div>
       </div>
 
-      <!-- 10. Makhana Wale Ad 01 (Drive Video) -->
+      <!-- Makhana 01 -->
       <div class="work-card" data-category="commercials" onclick="playMedia('https://drive.google.com/file/d/1_M5GtyS-YzFw3Il31KgGgd-PGDlzqEOY/preview')">
         <div class="thumbnail-wrapper">
           <div class="empty-thumb">Makhana Wale 01</div>
@@ -641,7 +619,7 @@
         </div>
       </div>
 
-      <!-- 11. Makhana Wale Ad 02 (Drive Video) -->
+      <!-- Makhana 02 -->
       <div class="work-card" data-category="commercials" onclick="playMedia('https://drive.google.com/file/d/1PGyj3y0_YqYMTHAH6E9QulzAMW2wPCvT/preview')">
         <div class="thumbnail-wrapper">
           <div class="empty-thumb">Makhana Wale 02</div>
@@ -656,7 +634,7 @@
         </div>
       </div>
 
-      <!-- 12. Brand Bada Karo -->
+      <!-- Brand Bada Karo -->
       <div class="work-card" data-category="commercials" onclick="playMedia('https://www.youtube-nocookie.com/embed/0pEJL-O1SHQ?autoplay=1')">
         <div class="thumbnail-wrapper">
           <img src="https://img.youtube.com/vi/0pEJL-O1SHQ/hqdefault.jpg" alt="Brand Bada Karo">
@@ -671,7 +649,7 @@
         </div>
       </div>
 
-      <!-- 13. Sanjay Ghodawat Academy -->
+      <!-- Sanjay Ghodawat Academy -->
       <div class="work-card" data-category="commercials" onclick="playMedia('https://www.youtube-nocookie.com/embed/i0k1usODKGY?autoplay=1')">
         <div class="thumbnail-wrapper">
           <img src="https://img.youtube.com/vi/i0k1usODKGY/hqdefault.jpg" alt="Sanjay Ghodawat Academy">
@@ -686,7 +664,7 @@
         </div>
       </div>
 
-      <!-- 14. YouTube Digital 01 -->
+      <!-- YouTube 01 -->
       <div class="work-card" data-category="digital" onclick="playMedia('https://www.youtube-nocookie.com/embed/y_Y7JmiZJac?autoplay=1')">
         <div class="thumbnail-wrapper">
           <img src="https://img.youtube.com/vi/y_Y7JmiZJac/hqdefault.jpg" alt="Digital Feature 01">
@@ -701,7 +679,7 @@
         </div>
       </div>
 
-      <!-- 15. YouTube Digital 02 -->
+      <!-- YouTube 02 -->
       <div class="work-card" data-category="digital" onclick="playMedia('https://www.youtube-nocookie.com/embed/XUXn5NBpxho?autoplay=1')">
         <div class="thumbnail-wrapper">
           <img src="https://img.youtube.com/vi/XUXn5NBpxho/hqdefault.jpg" alt="Digital Feature 02">
@@ -734,27 +712,27 @@
         <h4>Key Highlights</h4>
         <div class="credit-item">
           <span class="credit-role">Macho (Feature)</span>
-          <span>Writer &bull; Director &bull; Editor</span>
+          <span>Writer &bull; Director &bull; Editor[cite: 1]</span>
         </div>
         <div class="credit-item">
           <span class="credit-role">Sudh Sakharambh (Feature)</span>
-          <span>Lead Film Editor</span>
+          <span>Lead Film Editor[cite: 1]</span>
         </div>
         <div class="credit-item">
           <span class="credit-role">Matka King (Amazon Prime)</span>
-          <span>Assistant & Online Editor</span>
+          <span>Assistant & Online Editor[cite: 1]</span>
         </div>
         <div class="credit-item">
           <span class="credit-role">Ghar Banduk Biryani</span>
-          <span>Assistant Editor</span>
+          <span>Assistant Editor[cite: 1]</span>
         </div>
         <div class="credit-item">
           <span class="credit-role">Khashaba</span>
-          <span>Assistant Director</span>
+          <span>Assistant Director[cite: 1]</span>
         </div>
         <div class="credit-item">
           <span class="credit-role">Aatpat Productions</span>
-          <span>In-House Editor (3 Yrs)</span>
+          <span>In-House Editor (3 Yrs)[cite: 1]</span>
         </div>
       </div>
     </div>
@@ -765,8 +743,8 @@
     <p>Available for Directorial & Post-Production Commissions</p>
 
     <div class="contact-methods">
-      <a href="mailto:rrukade6@gmail.com">rrukade6@gmail.com</a>
-      <a href="tel:+917020234765">+91 7020234765</a>
+      <a href="mailto:rrukade6@gmail.com">rrukade6@gmail.com[cite: 1]</a>
+      <a href="tel:+917020234765">+91 7020234765[cite: 1]</a>
       <a href="https://www.linkedin.com/in/rohit-rukade-925a28328/" target="_blank">LinkedIn</a>
     </div>
   </section>
@@ -782,7 +760,7 @@
 
   <footer>
     <span>&copy; 2026 Rohit Rajendra Rukade</span>
-    <span>Writer &bull; Director &bull; Editor</span>
+    <span>Writer &bull; Director &bull; Editor[cite: 1]</span>
   </footer>
 
   <script>
