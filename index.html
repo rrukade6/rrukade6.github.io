@@ -3,21 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rohit Rajendra Rukade | Filmmaker & Video Editor</title>
+  <title>Rohit Rajendra Rukade | Filmmaker • Director • Editor</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
     :root {
-      --bg: #0b0c10;
-      --card-bg: #14161d;
-      --border: #232733;
-      --text: #e2e8f0;
+      --bg-dark: #07080b;
+      --bg-card: rgba(18, 20, 29, 0.7);
+      --bg-card-hover: rgba(26, 29, 42, 0.9);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(245, 158, 11, 0.35);
+      --text-main: #f8fafc;
       --text-muted: #94a3b8;
-      --accent: #f59e0b; /* cinematic gold */
-      --accent-glow: rgba(245, 158, 11, 0.18);
+      --gold-primary: #d4af37;
+      --gold-bright: #fbbf24;
+      --gold-glow: rgba(212, 175, 55, 0.22);
+      --font-title: 'Cinzel', serif;
       --font-display: 'Space Grotesk', sans-serif;
       --font-body: 'Plus Jakarta Sans', sans-serif;
     }
@@ -29,11 +33,25 @@
     }
 
     body {
-      background-color: var(--bg);
-      color: var(--text);
+      background-color: var(--bg-dark);
+      color: var(--text-main);
       font-family: var(--font-body);
       line-height: 1.6;
+      overflow-x: hidden;
       scroll-behavior: smooth;
+    }
+
+    /* Ambient Background Gradients */
+    .ambient-glow {
+      position: fixed;
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 70%);
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 0;
+      pointer-events: none;
     }
 
     /* Navigation */
@@ -41,207 +59,233 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(11, 12, 16, 0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
+      background: rgba(7, 8, 11, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
       z-index: 1000;
-      padding: 1rem 2rem;
+      padding: 1.1rem 3rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
     .logo {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
+      font-family: var(--font-title);
+      font-size: 1.15rem;
       font-weight: 700;
-      letter-spacing: 0.5px;
+      letter-spacing: 2px;
       color: #fff;
     }
 
     .logo span {
-      color: var(--accent);
+      color: var(--gold-bright);
     }
 
     .nav-links {
       display: flex;
-      gap: 1.5rem;
+      gap: 2rem;
       list-style: none;
     }
 
     .nav-links a {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.95rem;
+      font-size: 0.88rem;
       font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
       transition: color 0.3s;
     }
 
     .nav-links a:hover {
-      color: var(--accent);
+      color: var(--gold-bright);
     }
 
     /* Hero Section */
     .hero {
-      min-height: 90vh;
+      position: relative;
+      min-height: 92vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 7rem 1.5rem 4rem;
-      background: radial-gradient(circle at top, #1f1d16 0%, var(--bg) 65%);
+      padding: 8rem 1.5rem 5rem;
+      z-index: 1;
     }
 
     .hero-content {
-      max-width: 850px;
+      max-width: 900px;
     }
 
     .hero-tagline {
-      display: inline-block;
-      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-display);
+      font-size: 0.82rem;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--accent);
-      background: var(--accent-glow);
-      border: 1px solid rgba(245, 158, 11, 0.3);
-      padding: 0.35rem 1rem;
+      letter-spacing: 3px;
+      color: var(--gold-bright);
+      background: var(--gold-glow);
+      border: 1px solid var(--border-accent);
+      padding: 0.45rem 1.4rem;
       border-radius: 50px;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
 
     .hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      line-height: 1.15;
-      margin-bottom: 1.2rem;
+      font-family: var(--font-title);
+      font-size: clamp(2.5rem, 5.5vw, 4.8rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
       color: #fff;
+      font-weight: 900;
+      letter-spacing: 1px;
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       color: var(--text-muted);
-      max-width: 680px;
-      margin: 0 auto 2rem;
+      max-width: 720px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
     }
 
     .hero-buttons {
       display: flex;
-      gap: 1rem;
+      gap: 1.25rem;
       justify-content: center;
       flex-wrap: wrap;
     }
 
     .btn {
-      padding: 0.85rem 1.8rem;
-      border-radius: 8px;
+      padding: 0.9rem 2rem;
+      border-radius: 6px;
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
       cursor: pointer;
     }
 
-    .btn-primary {
-      background: var(--accent);
-      color: #0b0c10;
-      border: 1px solid var(--accent);
+    .btn-gold {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #050608;
+      border: 1px solid #f59e0b;
+      box-shadow: 0 4px 20px rgba(245, 158, 11, 0.25);
     }
 
-    .btn-primary:hover {
-      background: #d97706;
-      box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(245, 158, 11, 0.45);
     }
 
-    .btn-outline {
-      border: 1px solid var(--border);
+    .btn-glass {
+      border: 1px solid var(--border-subtle);
       color: #fff;
-      background: transparent;
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
     }
 
-    .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+    .btn-glass:hover {
+      border-color: var(--gold-bright);
+      color: var(--gold-bright);
+      background: rgba(255, 255, 255, 0.06);
     }
 
-    /* Section Styling */
+    /* Section Layout */
     section {
-      padding: 5rem 1.5rem;
-      max-width: 1200px;
+      position: relative;
+      padding: 6rem 1.5rem;
+      max-width: 1280px;
       margin: 0 auto;
+      z-index: 1;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
     }
 
     .section-title {
-      font-family: var(--font-display);
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+      font-family: var(--font-title);
+      font-size: 2.2rem;
+      letter-spacing: 1px;
       color: #fff;
-      text-align: center;
+      margin-bottom: 0.6rem;
     }
 
     .section-subtitle {
-      text-align: center;
       color: var(--text-muted);
-      margin-bottom: 3rem;
-      font-size: 1rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
     }
 
-    /* Filter Buttons */
+    /* Filter Tabs */
     .filter-tabs {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 3rem;
+      gap: 0.8rem;
+      margin-bottom: 3.5rem;
     }
 
     .tab-btn {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
       color: var(--text-muted);
-      padding: 0.5rem 1.25rem;
-      border-radius: 30px;
-      font-size: 0.875rem;
+      padding: 0.6rem 1.4rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
       font-weight: 500;
+      letter-spacing: 0.5px;
       cursor: pointer;
+      backdrop-filter: blur(10px);
       transition: all 0.3s;
     }
 
     .tab-btn:hover, .tab-btn.active {
-      background: var(--accent);
+      background: var(--gold-bright);
       color: #000;
-      border-color: var(--accent);
+      font-weight: 600;
+      border-color: var(--gold-bright);
+      box-shadow: 0 0 15px rgba(251, 191, 36, 0.3);
     }
 
-    /* Work Grid */
+    /* Portfolio Grid */
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.75rem;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 2rem;
     }
 
     .project-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.3s ease, border-color 0.3s ease;
+      backdrop-filter: blur(10px);
+      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
     }
 
     .project-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(245, 158, 11, 0.4);
+      transform: translateY(-6px);
+      border-color: var(--border-accent);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.12);
     }
 
     .card-thumbnail {
       position: relative;
-      padding-top: 56.25%; /* 16:9 Aspect Ratio */
-      background: #1a1d24;
+      padding-top: 56.25%; /* 16:9 */
+      background: #11131a;
       overflow: hidden;
+      cursor: pointer;
     }
 
     .card-thumbnail img {
@@ -251,17 +295,18 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s ease;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .project-card:hover .card-thumbnail img {
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
 
     .play-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.45);
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(2px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -273,13 +318,26 @@
       opacity: 1;
     }
 
-    .play-overlay i {
-      font-size: 2.5rem;
-      color: var(--accent);
+    .play-icon-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(251, 191, 36, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-size: 1.4rem;
+      box-shadow: 0 0 25px rgba(251, 191, 36, 0.5);
+      transition: transform 0.2s;
+    }
+
+    .project-card:hover .play-icon-circle {
+      transform: scale(1.1);
     }
 
     .card-body {
-      padding: 1.25rem;
+      padding: 1.5rem;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
@@ -288,144 +346,224 @@
     .card-tags {
       display: flex;
       gap: 0.5rem;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.8rem;
       flex-wrap: wrap;
     }
 
     .tag {
-      font-size: 0.75rem;
-      padding: 0.2rem 0.6rem;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 0.25rem 0.65rem;
       border-radius: 4px;
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--accent);
-      font-weight: 500;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--gold-bright);
+      font-weight: 600;
+      border: 1px solid rgba(251, 191, 36, 0.2);
     }
 
     .card-title {
-      font-size: 1.15rem;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
       margin-bottom: 0.5rem;
       color: #fff;
     }
 
     .card-desc {
-      font-size: 0.875rem;
+      font-size: 0.88rem;
       color: var(--text-muted);
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
       flex-grow: 1;
     }
 
-    .card-link-btn {
+    .card-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
       text-decoration: none;
       color: #fff;
-      background: #20232c;
-      border: 1px solid var(--border);
-      padding: 0.55rem 1rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      padding: 0.65rem 1.2rem;
       border-radius: 6px;
       font-size: 0.85rem;
       font-weight: 500;
-      transition: all 0.2s;
+      cursor: pointer;
+      transition: all 0.25s;
     }
 
-    .card-link-btn:hover {
-      background: var(--accent);
+    .card-btn:hover {
+      background: var(--gold-bright);
       color: #000;
-      border-color: var(--accent);
+      border-color: var(--gold-bright);
+      font-weight: 600;
+    }
+
+    /* Reels Section */
+    .reels-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.75rem;
+      margin-top: 2rem;
+    }
+
+    .reel-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .reel-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-accent);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    .reel-preview {
+      position: relative;
+      padding-top: 130%; /* 9:16 vertical ratio */
+      background: #151822;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .reel-icon-center {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, rgba(7, 8, 11, 0.8) 80%);
+    }
+
+    .reel-icon-center i {
+      font-size: 3rem;
+      color: var(--gold-bright);
+      margin-bottom: 0.8rem;
+    }
+
+    .reel-info {
+      padding: 1.2rem;
+      text-align: center;
+    }
+
+    .reel-info h4 {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .reel-info span {
+      font-size: 0.8rem;
+      color: var(--gold-bright);
     }
 
     /* About Section */
     .about-container {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5rem;
       align-items: center;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      padding: 3rem;
-      border-radius: 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 3.5rem;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
     }
 
     .about-text h3 {
-      font-family: var(--font-display);
-      font-size: 1.75rem;
-      margin-bottom: 1rem;
+      font-family: var(--font-title);
+      font-size: 1.85rem;
+      margin-bottom: 1.25rem;
       color: #fff;
     }
 
     .about-text p {
       color: var(--text-muted);
       margin-bottom: 1.25rem;
+      font-weight: 300;
+      line-height: 1.7;
     }
 
     .skills-box {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+      gap: 1.25rem;
     }
 
     .skill-card {
-      background: #101217;
-      border: 1px solid var(--border);
-      padding: 1.25rem;
-      border-radius: 8px;
+      background: rgba(10, 11, 16, 0.7);
+      border: 1px solid var(--border-subtle);
+      padding: 1.4rem;
+      border-radius: 10px;
     }
 
     .skill-card h4 {
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
+      color: var(--gold-bright);
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+      font-family: var(--font-display);
     }
 
     .skill-card p {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--text-muted);
+      line-height: 1.5;
     }
 
     /* Contact Section */
     .contact-section {
       text-align: center;
-      background: radial-gradient(circle at bottom, #1f1d16 0%, var(--bg) 70%);
-      border-radius: 20px;
-      padding: 4rem 1.5rem;
-      margin-bottom: 4rem;
-      border: 1px solid var(--border);
+      background: radial-gradient(circle at bottom, rgba(212, 175, 55, 0.08) 0%, var(--bg-card) 80%);
+      border-radius: 24px;
+      padding: 4.5rem 2rem;
+      border: 1px solid var(--border-accent);
     }
 
     .contact-links {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
-      margin-top: 2rem;
+      gap: 1.25rem;
+      margin-top: 2.5rem;
       flex-wrap: wrap;
     }
 
     .contact-btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      color: var(--text);
+      gap: 0.6rem;
+      color: var(--text-main);
       text-decoration: none;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      padding: 0.75rem 1.5rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      padding: 0.85rem 1.8rem;
       border-radius: 8px;
+      font-size: 0.9rem;
       transition: all 0.3s;
     }
 
     .contact-btn:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+      border-color: var(--gold-bright);
+      color: var(--gold-bright);
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-2px);
     }
 
-    /* Modal Video Player */
+    /* Video Modal */
     .modal {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(8px);
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(12px);
       display: none;
       align-items: center;
       justify-content: center;
@@ -436,11 +574,12 @@
     .modal-content {
       position: relative;
       width: 100%;
-      max-width: 900px;
+      max-width: 960px;
       background: #000;
       border-radius: 12px;
       overflow: hidden;
-      border: 1px solid var(--border);
+      border: 1px solid var(--border-accent);
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
     }
 
     .modal-video-wrapper {
@@ -458,28 +597,41 @@
 
     .modal-close {
       position: absolute;
-      top: -40px;
-      right: 0;
+      top: 15px;
+      right: 20px;
       color: #fff;
-      font-size: 1.8rem;
+      font-size: 2.2rem;
       background: transparent;
       border: none;
       cursor: pointer;
+      z-index: 2010;
+      line-height: 1;
+      transition: color 0.2s;
     }
 
-    /* Footer */
+    .modal-close:hover {
+      color: var(--gold-bright);
+    }
+
     footer {
       text-align: center;
-      padding: 2rem;
-      border-top: 1px solid var(--border);
+      padding: 2.5rem;
+      border-top: 1px solid var(--border-subtle);
       color: var(--text-muted);
       font-size: 0.85rem;
+      letter-spacing: 0.5px;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 850px) {
       .about-container {
         grid-template-columns: 1fr;
-        padding: 1.5rem;
+        padding: 2rem;
+      }
+      .skills-box {
+        grid-template-columns: 1fr;
+      }
+      nav {
+        padding: 1rem 1.5rem;
       }
       .nav-links {
         display: none;
@@ -489,54 +641,59 @@
 </head>
 <body>
 
-  <!-- Navigation -->
+  <div class="ambient-glow"></div>
+
+  <!-- Navbar -->
   <nav>
     <div class="logo">ROHIT <span>RUKADE</span></div>
     <ul class="nav-links">
       <li><a href="#work">Portfolio</a></li>
+      <li><a href="#reels">Reels & Vertical</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="mailto:rrukade6@gmail.com" class="btn btn-primary" style="padding: 0.4rem 1rem; font-size: 0.85rem;">Let's Talk</a>
+    <a href="mailto:rrukade6@gmail.com" class="btn btn-gold" style="padding: 0.45rem 1.2rem; font-size: 0.82rem;">Let's Connect</a>
   </nav>
 
   <!-- Hero Section -->
   <header class="hero">
     <div class="hero-content">
-      <div class="hero-tagline">Writer • Director • Video Editor</div>
-      <h1>Shaping Narratives on Set and in the Edit Suite</h1>
+      <div class="hero-tagline"><i class="fa-solid fa-clapperboard"></i> Writer • Director • Video Editor</div>
+      <h1>Cinema Born on Set.<br>Sculpted in the Edit Suite.</h1>
       <p>
-        From directing feature films and high-impact festival shorts to editing streaming series (Amazon Prime Video), brand commercials, and digital content. Bringing a director's vision to every cut.
+        From directing landmark feature narratives produced by Nagraj Manjule to full feature and OTT editing for Amazon Prime Video, commercial TVCs, and high-retention social media.
       </p>
       <div class="hero-buttons">
-        <a href="#work" class="btn btn-primary"><i class="fa-solid fa-play"></i> Watch Showreel & Work</a>
-        <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-envelope"></i> Get In Touch</a>
+        <a href="#work" class="btn btn-gold"><i class="fa-solid fa-play"></i> Explore Work</a>
+        <a href="#contact" class="btn btn-glass"><i class="fa-solid fa-paper-plane"></i> Get in Touch</a>
       </div>
     </div>
   </header>
 
-  <!-- Work Section -->
+  <!-- Portfolio Section -->
   <section id="work">
-    <h2 class="section-title">Featured Work</h2>
-    <p class="section-subtitle">Explore selected projects across film, streaming, commercial, and digital media.</p>
+    <div class="section-header">
+      <h2 class="section-title">Film & Post-Production</h2>
+      <p class="section-subtitle">A curated showcase of directing, feature editing, and brand storytelling</p>
+    </div>
 
     <!-- Filter Tabs -->
     <div class="filter-tabs">
-      <button class="tab-btn active" onclick="filterProjects('all')">All Work</button>
-      <button class="tab-btn" onclick="filterProjects('directing')">Writer & Director</button>
-      <button class="tab-btn" onclick="filterProjects('feature')">Feature & OTT Editing</button>
-      <button class="tab-btn" onclick="filterProjects('commercials')">Commercials & Ads</button>
-      <button class="tab-btn" onclick="filterProjects('digital')">Digital & YouTube</button>
+      <button class="tab-btn active" onclick="filterProjects(event, 'all')">All Work</button>
+      <button class="tab-btn" onclick="filterProjects(event, 'directing')">Writer & Director</button>
+      <button class="tab-btn" onclick="filterProjects(event, 'feature')">Feature & OTT Editing</button>
+      <button class="tab-btn" onclick="filterProjects(event, 'commercials')">Commercials & Ads</button>
+      <button class="tab-btn" onclick="filterProjects(event, 'digital')">Digital & YouTube</button>
     </div>
 
-    <!-- Portfolio Grid -->
+    <!-- Grid -->
     <div class="portfolio-grid" id="project-container">
 
-      <!-- 1. Debut Feature Film: Macho -->
+      <!-- 1. Debut Feature: Macho -->
       <div class="project-card" data-category="directing">
         <div class="card-thumbnail" onclick="openModal('https://www.youtube-nocookie.com/embed/kiEg4vUQw8E?autoplay=1')">
           <img src="https://img.youtube.com/vi/kiEg4vUQw8E/hqdefault.jpg" alt="Macho Debut Feature Film">
-          <div class="play-overlay"><i class="fa-solid fa-circle-play"></i></div>
+          <div class="play-overlay"><div class="play-icon-circle"><i class="fa-solid fa-play"></i></div></div>
         </div>
         <div class="card-body">
           <div class="card-tags">
@@ -545,32 +702,52 @@
           </div>
           <h3 class="card-title">Macho (Debut Feature Film)</h3>
           <p class="card-desc">Produced by Nagraj Manjule. Starring Swapnil Joshi, Om Bhutkar, Vidhula Chougule, and Alok Rajwade.</p>
-          <button class="card-link-btn" onclick="openModal('https://www.youtube-nocookie.com/embed/kiEg4vUQw8E?autoplay=1')"><i class="fa-solid fa-play"></i> Watch Teaser</button>
+          <button class="card-btn" onclick="openModal('https://www.youtube-nocookie.com/embed/kiEg4vUQw8E?autoplay=1')"><i class="fa-solid fa-play"></i> Watch Official Teaser</button>
         </div>
       </div>
 
-      <!-- 2. Matka King (Amazon Prime) -->
+      <!-- 2. Sudh Sakharambh (Feature Editor) -->
       <div class="project-card" data-category="feature">
-        <div class="card-thumbnail" onclick="openModal('https://www.youtube-nocookie.com/embed/9T1oy0y8-zY?autoplay=1')">
-          <img src="https://img.youtube.com/vi/9T1oy0y8-zY/hqdefault.jpg" alt="Matka King Amazon Prime Series">
-          <div class="play-overlay"><i class="fa-solid fa-circle-play"></i></div>
+        <div class="card-thumbnail" onclick="openModal('https://www.youtube-nocookie.com/embed/kiEg4vUQw8E?autoplay=1')">
+          <div style="position: absolute; inset: 0; background: linear-gradient(135deg, #1f1b13, #090a0f); display: flex; align-items: center; justify-content: center; flex-direction: column;">
+            <i class="fa-solid fa-film" style="font-size: 2.8rem; color: var(--gold-bright); margin-bottom: 0.6rem;"></i>
+            <span style="font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-display); letter-spacing: 1px;">THEATRICAL FEATURE</span>
+          </div>
+          <div class="play-overlay"><div class="play-icon-circle"><i class="fa-solid fa-play"></i></div></div>
         </div>
         <div class="card-body">
           <div class="card-tags">
-            <span class="tag">OTT Series</span>
-            <span class="tag">Assistant / Online Editor</span>
+            <span class="tag">Feature Film</span>
+            <span class="tag">Lead Editor</span>
           </div>
-          <h3 class="card-title">Matka King (Amazon Prime Video)</h3>
-          <p class="card-desc">High-stakes period drama series created with Nagraj Popatrao Manjule and starring Vijay Varma.</p>
-          <button class="card-link-btn" onclick="openModal('https://www.youtube-nocookie.com/embed/9T1oy0y8-zY?autoplay=1')"><i class="fa-solid fa-play"></i> Watch Preview</button>
+          <h3 class="card-title">Sudh Sakharambh</h3>
+          <p class="card-desc">Full feature film edited with precision narrative flow, emotional pacing, and sound coordination.</p>
+          <button class="card-btn" onclick="openModal('https://www.youtube-nocookie.com/embed/kiEg4vUQw8E?autoplay=1')"><i class="fa-solid fa-film"></i> View Project</button>
         </div>
       </div>
 
-      <!-- 3. Ghar Banduk Biryani -->
+      <!-- 3. Matka King (Amazon Prime) -->
+      <div class="project-card" data-category="feature">
+        <div class="card-thumbnail" onclick="openModal('https://www.youtube-nocookie.com/embed/9T1oy0y8-zY?autoplay=1')">
+          <img src="https://img.youtube.com/vi/9T1oy0y8-zY/hqdefault.jpg" alt="Matka King Amazon Prime Series">
+          <div class="play-overlay"><div class="play-icon-circle"><i class="fa-solid fa-play"></i></div></div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag">Amazon Prime Video</span>
+            <span class="tag">Assistant & Online Editor</span>
+          </div>
+          <h3 class="card-title">Matka King</h3>
+          <p class="card-desc">Gritty 1960s period crime drama series created with Nagraj Popatrao Manjule and starring Vijay Varma.</p>
+          <button class="card-btn" onclick="openModal('https://www.youtube-nocookie.com/embed/9T1oy0y8-zY?autoplay=1')"><i class="fa-solid fa-play"></i> Watch Preview</button>
+        </div>
+      </div>
+
+      <!-- 4. Ghar Banduk Biryani -->
       <div class="project-card" data-category="feature">
         <div class="card-thumbnail" onclick="openModal('https://www.youtube-nocookie.com/embed/_GEf5U9i6-w?autoplay=1')">
           <img src="https://img.youtube.com/vi/_GEf5U9i6-w/hqdefault.jpg" alt="Ghar Banduk Biryani">
-          <div class="play-overlay"><i class="fa-solid fa-circle-play"></i></div>
+          <div class="play-overlay"><div class="play-icon-circle"><i class="fa-solid fa-play"></i></div></div>
         </div>
         <div class="card-body">
           <div class="card-tags">
@@ -579,15 +756,15 @@
           </div>
           <h3 class="card-title">Ghar Banduk Biryani</h3>
           <p class="card-desc">Critically acclaimed theatrical feature produced by Zee Studios & Aatpat Productions.</p>
-          <button class="card-link-btn" onclick="openModal('https://www.youtube-nocookie.com/embed/_GEf5U9i6-w?autoplay=1')"><i class="fa-solid fa-play"></i> Watch GBB Promo</button>
+          <button class="card-btn" onclick="openModal('https://www.youtube-nocookie.com/embed/_GEf5U9i6-w?autoplay=1')"><i class="fa-solid fa-play"></i> Watch GBB Promo</button>
         </div>
       </div>
 
-      <!-- 4. Prey (Short Film) -->
+      <!-- 5. Prey (Short Film) -->
       <div class="project-card" data-category="directing">
         <div class="card-thumbnail" onclick="openModal('https://www.youtube-nocookie.com/embed/I2HgXMA2DrU?autoplay=1')">
           <img src="https://img.youtube.com/vi/I2HgXMA2DrU/hqdefault.jpg" alt="Prey Short Film">
-          <div class="play-overlay"><i class="fa-solid fa-circle-play"></i></div>
+          <div class="play-overlay"><div class="play-icon-circle"><i class="fa-solid fa-play"></i></div></div>
         </div>
         <div class="card-body">
           <div class="card-tags">
@@ -595,16 +772,16 @@
             <span class="tag">Writer • Director • Editor</span>
           </div>
           <h3 class="card-title">Prey</h3>
-          <p class="card-desc">Narrative short exploring tense visual storytelling, pace, and dramatic character arcs.</p>
-          <button class="card-link-btn" onclick="openModal('https://www.youtube-nocookie.com/embed/I2HgXMA2DrU?autoplay=1')"><i class="fa-solid fa-play"></i> Watch Film</button>
+          <p class="card-desc">Psychological short film exploring tension, mood, and dramatic character arcs.</p>
+          <button class="card-btn" onclick="openModal('https://www.youtube-nocookie.com/embed/I2HgXMA2DrU?autoplay=1')"><i class="fa-solid fa-play"></i> Watch Full Film</button>
         </div>
       </div>
 
-      <!-- 5. Employment (Short Film) -->
+      <!-- 6. Employment (Short Film) -->
       <div class="project-card" data-category="directing">
         <div class="card-thumbnail" onclick="openModal('https://www.youtube-nocookie.com/embed/o6RJs1oDrAk?autoplay=1')">
           <img src="https://img.youtube.com/vi/o6RJs1oDrAk/hqdefault.jpg" alt="Employment Short Film">
-          <div class="play-overlay"><i class="fa-solid fa-circle-play"></i></div>
+          <div class="play-overlay"><div class="play-icon-circle"><i class="fa-solid fa-play"></i></div></div>
         </div>
         <div class="card-body">
           <div class="card-tags">
@@ -612,136 +789,189 @@
             <span class="tag">Writer • Director • Editor</span>
           </div>
           <h3 class="card-title">Employment</h3>
-          <p class="card-desc">Social narrative short film written, directed, and crafted in the edit suite.</p>
-          <button class="card-link-btn" onclick="openModal('https://www.youtube-nocookie.com/embed/o6RJs1oDrAk?autoplay=1')"><i class="fa-solid fa-play"></i> Watch Film</button>
+          <p class="card-desc">Social narrative short written, staged, directed, and crafted in the editing bay.</p>
+          <button class="card-btn" onclick="openModal('https://www.youtube-nocookie.com/embed/o6RJs1oDrAk?autoplay=1')"><i class="fa-solid fa-play"></i> Watch Full Film</button>
         </div>
       </div>
 
-      <!-- 6. Film Trailer / Edit Work -->
+      <!-- 7. Amenorrhea (Short Film Editor) -->
+      <div class="project-card" data-category="feature">
+        <div class="card-thumbnail" onclick="openModal('https://www.youtube-nocookie.com/embed/9krmH4RnvjA?autoplay=1')">
+          <img src="https://img.youtube.com/vi/9krmH4RnvjA/hqdefault.jpg" alt="Amenorrhea Short Film">
+          <div class="play-overlay"><div class="play-icon-circle"><i class="fa-solid fa-play"></i></div></div>
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag">Short Film</span>
+            <span class="tag">Editor</span>
+          </div>
+          <h3 class="card-title">Amenorrhea</h3>
+          <p class="card-desc">Intimate drama cut with sensitive pacing and nuanced story progression.</p>
+          <button class="card-btn" onclick="openModal('https://www.youtube-nocookie.com/embed/9krmH4RnvjA?autoplay=1')"><i class="fa-solid fa-play"></i> Watch Film</button>
+        </div>
+      </div>
+
+      <!-- 8. Theatrical Trailer Cut -->
       <div class="project-card" data-category="feature">
         <div class="card-thumbnail" onclick="openModal('https://www.youtube-nocookie.com/embed/dqY4ovLaFnk?autoplay=1')">
           <img src="https://img.youtube.com/vi/dqY4ovLaFnk/hqdefault.jpg" alt="Film Trailer Edit">
-          <div class="play-overlay"><i class="fa-solid fa-circle-play"></i></div>
+          <div class="play-overlay"><div class="play-icon-circle"><i class="fa-solid fa-play"></i></div></div>
         </div>
         <div class="card-body">
           <div class="card-tags">
-            <span class="tag">Feature Trailer</span>
+            <span class="tag">Trailer Edit</span>
             <span class="tag">Editor</span>
           </div>
-          <h3 class="card-title">Film Trailer Cut</h3>
-          <p class="card-desc">Paced, rhythmic theatrical trailer edit balancing narrative intrigue and musical beats.</p>
-          <button class="card-link-btn" onclick="openModal('https://www.youtube-nocookie.com/embed/dqY4ovLaFnk?autoplay=1')"><i class="fa-solid fa-play"></i> Watch Cut</button>
+          <h3 class="card-title">Theatrical Film Trailer</h3>
+          <p class="card-desc">High-tempo theatrical cut engineered for punchy rhythm, suspense, and music integration.</p>
+          <button class="card-btn" onclick="openModal('https://www.youtube-nocookie.com/embed/dqY4ovLaFnk?autoplay=1')"><i class="fa-solid fa-play"></i> Watch Trailer</button>
         </div>
       </div>
 
-      <!-- 7. Brand Bada Karo (Commercial) -->
+      <!-- 9. Brand Bada Karo (Ad) -->
       <div class="project-card" data-category="commercials">
         <div class="card-thumbnail" onclick="openModal('https://www.youtube-nocookie.com/embed/0pEJL-O1SHQ?autoplay=1')">
           <img src="https://img.youtube.com/vi/0pEJL-O1SHQ/hqdefault.jpg" alt="Brand Bada Karo Commercial">
-          <div class="play-overlay"><i class="fa-solid fa-circle-play"></i></div>
+          <div class="play-overlay"><div class="play-icon-circle"><i class="fa-solid fa-play"></i></div></div>
         </div>
         <div class="card-body">
           <div class="card-tags">
-            <span class="tag">Commercial Ad</span>
+            <span class="tag">Commercial TVC</span>
             <span class="tag">Editor</span>
           </div>
-          <h3 class="card-title">Brand Bada Karo Commercial</h3>
-          <p class="card-desc">Fast-paced brand commercial cut designed for marketing impact and audience retention.</p>
-          <button class="card-link-btn" onclick="openModal('https://www.youtube-nocookie.com/embed/0pEJL-O1SHQ?autoplay=1')"><i class="fa-solid fa-play"></i> Watch Commercial</button>
+          <h3 class="card-title">Brand Bada Karo Campaign</h3>
+          <p class="card-desc">Fast-paced, modern commercial cut designed for marketing impact and brand recall.</p>
+          <button class="card-btn" onclick="openModal('https://www.youtube-nocookie.com/embed/0pEJL-O1SHQ?autoplay=1')"><i class="fa-solid fa-play"></i> Watch Commercial</button>
         </div>
       </div>
 
-      <!-- 8. Sanjay Ghodawat Academy Ad -->
+      <!-- 10. Sanjay Ghodawat Academy -->
       <div class="project-card" data-category="commercials">
         <div class="card-thumbnail" onclick="openModal('https://www.youtube-nocookie.com/embed/i0k1usODKGY?autoplay=1')">
           <img src="https://img.youtube.com/vi/i0k1usODKGY/hqdefault.jpg" alt="Sanjay Ghodawat Ad">
-          <div class="play-overlay"><i class="fa-solid fa-circle-play"></i></div>
+          <div class="play-overlay"><div class="play-icon-circle"><i class="fa-solid fa-play"></i></div></div>
         </div>
         <div class="card-body">
           <div class="card-tags">
-            <span class="tag">Brand Campaign</span>
+            <span class="tag">Brand Film</span>
             <span class="tag">Editor</span>
           </div>
-          <h3 class="card-title">Sanjay Ghodawat IIT & Med Academy</h3>
-          <p class="card-desc">Promotional campaign film highlighting academic infrastructure and student success stories.</p>
-          <button class="card-link-btn" onclick="openModal('https://www.youtube-nocookie.com/embed/i0k1usODKGY?autoplay=1')"><i class="fa-solid fa-play"></i> Watch Ad</button>
+          <h3 class="card-title">Sanjay Ghodawat IIT Academy</h3>
+          <p class="card-desc">Polished institutional campaign showcasing educational infrastructure and success stories.</p>
+          <button class="card-btn" onclick="openModal('https://www.youtube-nocookie.com/embed/i0k1usODKGY?autoplay=1')"><i class="fa-solid fa-play"></i> Watch Brand Film</button>
         </div>
       </div>
 
-      <!-- 9. Raj Masala TVC -->
+      <!-- 11. Raj Masala TVC -->
       <div class="project-card" data-category="commercials">
         <div class="card-thumbnail" onclick="openModal('https://drive.google.com/file/d/1IPNOhgnj2VwW7rVNKIsBiZ-s1AiL5DFE/preview')">
-          <div style="background: #1e293b; width: 100%; height: 100%; position: absolute; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-            <i class="fa-solid fa-film" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 0.5rem;"></i>
-            <span style="font-size: 0.8rem; color: #94a3b8;">Drive Preview</span>
+          <div style="position: absolute; inset: 0; background: #131722; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+            <i class="fa-solid fa-clapperboard" style="font-size: 2.5rem; color: var(--gold-bright); margin-bottom: 0.5rem;"></i>
+            <span style="font-size: 0.8rem; color: #94a3b8;">Commercial Drive Media</span>
           </div>
-          <div class="play-overlay"><i class="fa-solid fa-circle-play"></i></div>
+          <div class="play-overlay"><div class="play-icon-circle"><i class="fa-solid fa-play"></i></div></div>
         </div>
         <div class="card-body">
           <div class="card-tags">
-            <span class="tag">FMCG Commercial</span>
+            <span class="tag">FMCG TVC</span>
             <span class="tag">Editor</span>
           </div>
           <h3 class="card-title">Raj Masala Commercial</h3>
-          <p class="card-desc">High-energy food commercial edit highlighting product appeal, colors, and rhythm.</p>
-          <button class="card-link-btn" onclick="openModal('https://drive.google.com/file/d/1IPNOhgnj2VwW7rVNKIsBiZ-s1AiL5DFE/preview')"><i class="fa-solid fa-play"></i> Watch Video</button>
+          <p class="card-desc">Color-rich, fast-moving FMCG ad cut tailored for food product appeal and rhythm.</p>
+          <button class="card-btn" onclick="openModal('https://drive.google.com/file/d/1IPNOhgnj2VwW7rVNKIsBiZ-s1AiL5DFE/preview')"><i class="fa-solid fa-play"></i> Play Commercial</button>
         </div>
       </div>
 
-      <!-- 10. Makhana Wale TVC -->
+      <!-- 12. Makhana Wale TVC -->
       <div class="project-card" data-category="commercials">
         <div class="card-thumbnail" onclick="openModal('https://drive.google.com/file/d/1_M5GtyS-YzFw3Il31KgGgd-PGDlzqEOY/preview')">
-          <div style="background: #1e293b; width: 100%; height: 100%; position: absolute; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-            <i class="fa-solid fa-film" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 0.5rem;"></i>
-            <span style="font-size: 0.8rem; color: #94a3b8;">Drive Preview</span>
+          <div style="position: absolute; inset: 0; background: #131722; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+            <i class="fa-solid fa-clapperboard" style="font-size: 2.5rem; color: var(--gold-bright); margin-bottom: 0.5rem;"></i>
+            <span style="font-size: 0.8rem; color: #94a3b8;">Commercial Drive Media</span>
           </div>
-          <div class="play-overlay"><i class="fa-solid fa-circle-play"></i></div>
+          <div class="play-overlay"><div class="play-icon-circle"><i class="fa-solid fa-play"></i></div></div>
         </div>
         <div class="card-body">
           <div class="card-tags">
-            <span class="tag">FMCG Commercial</span>
+            <span class="tag">Snack Brand TVC</span>
             <span class="tag">Editor</span>
           </div>
-          <h3 class="card-title">Makhana Wale Ad Campaign</h3>
-          <p class="card-desc">Crisp snack commercial edit tailored for television and high-conversion social media ads.</p>
-          <button class="card-link-btn" onclick="openModal('https://drive.google.com/file/d/1_M5GtyS-YzFw3Il31KgGgd-PGDlzqEOY/preview')"><i class="fa-solid fa-play"></i> Watch Video</button>
+          <h3 class="card-title">Makhana Wale Commercial</h3>
+          <p class="card-desc">Crisp snack advertisement engineered for quick punchiness and audience appetite appeal.</p>
+          <button class="card-btn" onclick="openModal('https://drive.google.com/file/d/1_M5GtyS-YzFw3Il31KgGgd-PGDlzqEOY/preview')"><i class="fa-solid fa-play"></i> Play Commercial</button>
         </div>
       </div>
 
-      <!-- 11. YouTube Digital Project 1 -->
+      <!-- 13. YouTube Feature 1 -->
       <div class="project-card" data-category="digital">
         <div class="card-thumbnail" onclick="openModal('https://www.youtube-nocookie.com/embed/y_Y7JmiZJac?autoplay=1')">
-          <img src="https://img.youtube.com/vi/y_Y7JmiZJac/hqdefault.jpg" alt="Digital YouTube Video">
-          <div class="play-overlay"><i class="fa-solid fa-circle-play"></i></div>
+          <img src="https://img.youtube.com/vi/y_Y7JmiZJac/hqdefault.jpg" alt="Digital Media Production">
+          <div class="play-overlay"><div class="play-icon-circle"><i class="fa-solid fa-play"></i></div></div>
         </div>
         <div class="card-body">
           <div class="card-tags">
             <span class="tag">Digital Content</span>
             <span class="tag">Editor</span>
           </div>
-          <h3 class="card-title">Digital Video Feature 01</h3>
-          <p class="card-desc">Engaging YouTube video production blending clean transitions and audience retention editing.</p>
-          <button class="card-link-btn" onclick="openModal('https://www.youtube-nocookie.com/embed/y_Y7JmiZJac?autoplay=1')"><i class="fa-solid fa-play"></i> Watch Video</button>
+          <h3 class="card-title">Digital Feature Production 01</h3>
+          <p class="card-desc">Engaging YouTube and online video edit blending narrative transitions with viewer retention.</p>
+          <button class="card-btn" onclick="openModal('https://www.youtube-nocookie.com/embed/y_Y7JmiZJac?autoplay=1')"><i class="fa-solid fa-play"></i> Watch Video</button>
         </div>
       </div>
 
-      <!-- 12. YouTube Digital Project 2 -->
+      <!-- 14. YouTube Feature 2 -->
       <div class="project-card" data-category="digital">
         <div class="card-thumbnail" onclick="openModal('https://www.youtube-nocookie.com/embed/XUXn5NBpxho?autoplay=1')">
-          <img src="https://img.youtube.com/vi/XUXn5NBpxho/hqdefault.jpg" alt="Digital YouTube Video">
-          <div class="play-overlay"><i class="fa-solid fa-circle-play"></i></div>
+          <img src="https://img.youtube.com/vi/XUXn5NBpxho/hqdefault.jpg" alt="Digital Media Production">
+          <div class="play-overlay"><div class="play-icon-circle"><i class="fa-solid fa-play"></i></div></div>
         </div>
         <div class="card-body">
           <div class="card-tags">
             <span class="tag">Digital Content</span>
             <span class="tag">Editor</span>
           </div>
-          <h3 class="card-title">Digital Video Feature 02</h3>
-          <p class="card-desc">High-quality online content edit optimized for pacing, storytelling, and digital delivery.</p>
-          <button class="card-link-btn" onclick="openModal('https://www.youtube-nocookie.com/embed/XUXn5NBpxho?autoplay=1')"><i class="fa-solid fa-play"></i> Watch Video</button>
+          <h3 class="card-title">Digital Feature Production 02</h3>
+          <p class="card-desc">Modern digital video assembly with seamless sound design, pacing, and visual storytelling.</p>
+          <button class="card-btn" onclick="openModal('https://www.youtube-nocookie.com/embed/XUXn5NBpxho?autoplay=1')"><i class="fa-solid fa-play"></i> Watch Video</button>
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- Instagram Reels & Vertical Content Section -->
+  <section id="reels">
+    <div class="section-header">
+      <h2 class="section-title">Reels & Vertical Storytelling</h2>
+      <p class="section-subtitle">Snappy, high-retention short-form edits designed for maximum social engagement</p>
+    </div>
+
+    <div class="reels-grid">
+      <a href="https://www.instagram.com/reel/DckZQ6bJ-vq/" target="_blank" class="reel-card">
+        <div class="reel-preview">
+          <div class="reel-icon-center">
+            <i class="fa-brands fa-instagram"></i>
+            <span style="font-size: 0.85rem; letter-spacing: 1px; font-weight: 600;">WATCH REEL 01</span>
+          </div>
+        </div>
+        <div class="reel-info">
+          <h4>Cinematic Social Cut</h4>
+          <span><i class="fa-solid fa-arrow-up-right-from-square"></i> Open in Instagram</span>
+        </div>
+      </a>
+
+      <a href="https://www.instagram.com/reel/Dchx8SJP8M4/" target="_blank" class="reel-card">
+        <div class="reel-preview">
+          <div class="reel-icon-center">
+            <i class="fa-brands fa-instagram"></i>
+            <span style="font-size: 0.85rem; letter-spacing: 1px; font-weight: 600;">WATCH REEL 02</span>
+          </div>
+        </div>
+        <div class="reel-info">
+          <h4>Dynamic Video Edit</h4>
+          <span><i class="fa-solid fa-arrow-up-right-from-square"></i> Open in Instagram</span>
+        </div>
+      </a>
     </div>
   </section>
 
@@ -749,35 +979,35 @@
   <section id="about">
     <div class="about-container">
       <div class="about-text">
-        <div class="hero-tagline" style="margin-bottom: 0.8rem;">Philosophy</div>
-        <h3>Directing with Precision. Editing with Soul.</h3>
+        <div class="hero-tagline" style="margin-bottom: 1rem;"><i class="fa-solid fa-film"></i> Creative Ethos</div>
+        <h3>Directing on Set. Elevating in the Edit.</h3>
         <p>
-          I view filmmaking and editing as two sides of the same coin. Having served as an in-house editor at Aatpat Productions for 3 years, I bring deep technical precision across Premiere Pro, FCP X, and Avid Media Composer.
+          I approach filmmaking with an integrated philosophy: the script is written on paper, staged on set, and finalized in the edit room.
         </p>
         <p>
-          Whether directing a feature film or cutting commercials and streaming series, every cut is deliberate—serving the emotional core of the story.
+          Having spent 3 years as an in-house editor at Aatpat Productions, working alongside masters like Nagraj Manjule on major productions (Ghar Banduk Biryani, Khashaba, Matka King), I bring a filmmaker's vision to every cut.
         </p>
-        <a href="https://www.linkedin.com/in/rohit-rukade-925a28328/" target="_blank" class="btn btn-outline" style="margin-top: 1rem;">
+        <a href="https://www.linkedin.com/in/rohit-rukade-925a28328/" target="_blank" class="btn btn-glass" style="margin-top: 0.5rem;">
           <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
         </a>
       </div>
 
       <div class="skills-box">
         <div class="skill-card">
-          <h4><i class="fa-solid fa-clapperboard"></i> Filmmaking</h4>
-          <p>Directing, Screenwriting, Pre-visualisation, Set Supervision, and Actor Direction.</p>
+          <h4><i class="fa-solid fa-clapperboard"></i> Feature Direction</h4>
+          <p>Vision execution, actor staging, narrative architecture, and on-set creative leadership.</p>
         </div>
         <div class="skill-card">
-          <h4><i class="fa-solid fa-sliders"></i> Post-Production</h4>
-          <p>Feature Assembly, Multi-track Pacing, Online Editing, VFX integration, & Sound Coordination.</p>
+          <h4><i class="fa-solid fa-sliders"></i> Narrative & OTT Editing</h4>
+          <p>Full-length feature flow, series assembly, dramatic pacing, and audio-visual synergy.</p>
         </div>
         <div class="skill-card">
-          <h4><i class="fa-solid fa-bullhorn"></i> Ads & Commercials</h4>
-          <p>FMCG, Brand Identity, High-retention cuts, and Fast-turnaround commercial deliverables.</p>
+          <h4><i class="fa-solid fa-bullhorn"></i> Commercials & Ads</h4>
+          <p>Punchy, high-retention commercial cuts for TVC, brands, and FMCG marketing.</p>
         </div>
         <div class="skill-card">
-          <h4><i class="fa-solid fa-laptop-code"></i> Industry Software</h4>
-          <p>Adobe Premiere Pro, Final Cut Pro X, Avid Media Composer, DaVinci Resolve workflows.</p>
+          <h4><i class="fa-solid fa-laptop-code"></i> Industry Suites</h4>
+          <p>Mastery of Adobe Premiere Pro, Final Cut Pro X, and Avid Media Composer.</p>
         </div>
       </div>
     </div>
@@ -786,24 +1016,24 @@
   <!-- Contact Section -->
   <section id="contact">
     <div class="contact-section">
-      <h2 class="section-title">Let's Collaborate</h2>
-      <p class="section-subtitle" style="margin-bottom: 1rem;">Available for Feature Directing, Commercials, OTT Post-Production, and Film Editing.</p>
+      <h2 class="section-title">Let's Create Together</h2>
+      <p class="section-subtitle" style="margin-bottom: 1.5rem;">Open for Feature Directing, OTT/Feature Editing, Commercial TVCs, and Brand Collaborations.</p>
       
       <div class="contact-links">
         <a href="mailto:rrukade6@gmail.com" class="contact-btn">
-          <i class="fa-solid fa-envelope"></i> rrukade6@gmail.com
+          <i class="fa-solid fa-envelope" style="color: var(--gold-bright);"></i> rrukade6@gmail.com
         </a>
         <a href="tel:+917020234765" class="contact-btn">
-          <i class="fa-solid fa-phone"></i> +91 7020234765
+          <i class="fa-solid fa-phone" style="color: var(--gold-bright);"></i> +91 7020234765
         </a>
         <a href="https://www.linkedin.com/in/rohit-rukade-925a28328/" target="_blank" class="contact-btn">
-          <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
+          <i class="fa-brands fa-linkedin" style="color: var(--gold-bright);"></i> LinkedIn
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Video Modal Player -->
+  <!-- Modal -->
   <div class="modal" id="videoModal" onclick="closeModal(event)">
     <div class="modal-content">
       <button class="modal-close" onclick="closeModalBtn()">&times;</button>
@@ -814,17 +1044,16 @@
   </div>
 
   <footer>
-    <p>&copy; 2026 Rohit Rajendra Rukade. All rights reserved.</p>
+    <p>&copy; 2026 Rohit Rajendra Rukade. All Rights Reserved.</p>
   </footer>
 
   <script>
-    // Tab filtering functionality
-    function filterProjects(category) {
+    function filterProjects(e, category) {
       const cards = document.querySelectorAll('.project-card');
       const buttons = document.querySelectorAll('.tab-btn');
 
       buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
+      e.currentTarget.classList.add('active');
 
       cards.forEach(card => {
         if (category === 'all' || card.dataset.category === category) {
@@ -835,12 +1064,11 @@
       });
     }
 
-    // Modal popup functionality
     const modal = document.getElementById('videoModal');
     const iframe = document.getElementById('modalIframe');
 
-    function openModal(videoUrl) {
-      iframe.src = videoUrl;
+    function openModal(url) {
+      iframe.src = url;
       modal.style.display = 'flex';
       document.body.style.overflow = 'hidden';
     }
@@ -851,8 +1079,8 @@
       document.body.style.overflow = 'auto';
     }
 
-    function closeModal(event) {
-      if (event.target === modal) {
+    function closeModal(e) {
+      if (e.target === modal) {
         closeModalBtn();
       }
     }
